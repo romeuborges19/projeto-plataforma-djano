@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    {%include 'main/partials/home-head.html'%}
+
+    <title>{% block title %}{% endblock title %} | Neomatik</title>
+</head>
+
+<body>
+    {%include 'main/partials/home-header.html'%}
+
+    <main class="main-content-list-container text">
+        <div class="main-content-list">
+            {% block content %} {%endblock content%}
+
+        </div>
+    </main>
+
+    {%include 'main/partials/footer.html'%}
+    
+</body>
+</html>

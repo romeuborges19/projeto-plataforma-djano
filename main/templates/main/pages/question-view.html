@@ -1,0 +1,13 @@
+{%extends 'base-templates/global/base.html'%}
+
+{% block content %}
+    <main class="question-main-container text">
+        <div class="question-page-content-container">
+            {%include 'main/partials/question-container.html'%}
+
+            <div class="answer-main-container">
+                {%include 'main/partials/answer-container.html'%}
+                {%include 'main/partials/answer-container.html'%}
+            </div>
+        </div>
+{%endblock content%}

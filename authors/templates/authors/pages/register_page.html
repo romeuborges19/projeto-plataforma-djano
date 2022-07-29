@@ -1,0 +1,51 @@
+{% load static %}
+
+{% include 'authors/partials/register_page_head.html'  %}
+
+        <section class="sign-up-main-section text">
+            <div class="signup-box text">
+                <div class="signup-headline-container">
+                    <h1 class="signup-headline">Sign Up</h1>
+                </div>
+                <form action="{% url 'authors:create' %}" method="POST" class="signup-form ">
+                    {%csrf_token%}
+
+                    <div class="signup-box-section-container">
+                        <div class="signup-form-input-container">
+                            <div class="signup-box-section">
+                                <label for="username" class="label">Username:</label><br/>
+                                {{form.username}}
+                                {{form.username.errors}}
+                            </div>
+                            <div class="signup-box-section">
+                                <label for="email" class="label">E-mail:</label><br/>
+                                {{form.email}}
+                                {{form.email.errors}}
+                            </div>
+                            <div class="signup-box-section">
+                                <label for="password" class="label">Password:</label><br/>
+                                {{form.password1}}
+                                {{form.password1.errors}}
+                            </div>
+                            <div class="signup-box-section">
+                                <label for="confirm-password" class="label">Confirm password:</label><br/>
+                                {{form.password2}}
+                                {{form.password2.errors}}
+                            </div>
+                        </div>
+    
+                        <div class="signup-box-buttons">
+                            <input type="submit" name="Sign Up" class="signup-submit-button" value="Sign Up">
+                            <a class="support-button" href="">Already have an account? Log in here.</a>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </section>        
+        
+    </header>
+    
+</body>
+</html>
