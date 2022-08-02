@@ -9,13 +9,14 @@ fake = Faker('pt-BR')
 
 def make_question():
     return {
+        'id': fake.random_number(digits=2, fix_len=True),
         'title': fake.sentence(nb_words=6),
         'question_text': fake.sentence(nb_words=50),
         'created_at': fake.date_time(),
         'modified_at':fake.date_time(),
         'author': {
             'first_name':fake.first_name(),
-            'last_name':fake.last_name(nb_letters=1)
+            'last_name':fake.last_name()
         },
         'tag': {
             'name': fake.word()
