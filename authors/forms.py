@@ -1,9 +1,44 @@
+from unicodedata import category
 from django import forms
-from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django import forms
+from main.models import Question, Answer, Category
 
+class QuestionForm(forms.ModelForm):
+    category = forms.ModelChoiceField(
+        queryset=Category.objects.all(),
+        widget=forms.Select(
+            attrs={'class':'question-category-form-control'}),
+        label='question-category',
+    )
+
+    author = forms.ModelChoiceField(
+        queryset=User.objects.all(),
+        widget=forms.Select(
+            attrs={'class':'question-category-form-control'}),
+        label='question-category',
+    )
+    class Meta:
+        model = Question
+        fields = ['title', 'question_text', 'question_photo', 'category']
+
+    title = forms.CharField(
+        label='title',
+        widget=forms.TextInput(attrs={'class':'form-control'})
+    )
+    question_photo = forms.ImageField(
+
+    )
+
+    question_text = forms.CharField(
+        widget=forms.TextInput(attrs={'class':'question-body-form-control'}),
+        label='question_text',
+        error_messages={
+            'required':'O corpo da pergunta não pode estar vazio',
+        }
+    )
+
+    
 
 class CreateUserForm(UserCreationForm):
 

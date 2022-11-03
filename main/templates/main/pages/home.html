@@ -3,6 +3,7 @@
 {%block title%}Home{%endblock title%}
 
 {% block content %}
+        {% include 'main/partials/home-subheader.html' %}
         <div class="main-content-list">
             {%for question in questions %}
                 {%include 'main/partials/post.html' %}

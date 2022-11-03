@@ -1,13 +1,16 @@
 {%extends 'global/base.html'%}
 
+{% block title %}{{title}}{% endblock title %}
+
+
 {% block content %}
     <main class="question-main-container text">
         <div class="question-page-content-container">
             {%include 'main/partials/question-container.html'%}
-
-            <div class="answer-main-container">
-                {%include 'main/partials/answer-container.html'%}
-                {%include 'main/partials/answer-container.html'%}
-            </div>
+            {%for answer in answers%}
+                <div class="answer-main-container">
+                    {%include 'main/partials/answer-container.html'%}
+                </div>
+            {%endfor%}
         </div>
 {%endblock content%}

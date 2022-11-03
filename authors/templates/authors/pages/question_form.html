@@ -1,0 +1,37 @@
+{% load static %}
+
+{% include 'authors/partials/register_page_head.html'  %}
+<section class="question-form-page-content">
+    
+    
+    <section class="question-form-box-container">
+        <div class="question-form-title-container">
+            <h2 class="question-form-title">Faça uma pergunta</h2>
+        </div>
+
+        <div class="question-form-box">
+            <form action="{% url 'authors:createask' %}" method="POST">
+                {% csrf_token %}
+
+                <div class="question-form-title-container">
+                    <label class="question-form-title">Título:</label><br/>
+                    {{form.title}}<br/>
+                </div>
+                <div class="question-form-body-container">
+                    <label class="question-form-body">Corpo:</label><br/>
+                    {{form.question_text}}<br/>
+                </div>
+                {{form.question_photo}}<br/>
+                <div class="question-form-category-container">
+                    <label class="question-form-category">Matéria:</label><br/>
+                    {{form.category}}<br/>
+                    {{form.author}}<br/>
+                </div>
+                <div class="question-form-box-button">
+                    <input type="submit" name="Post Question" class="post-question-button" value="Postar pergunta">
+                </div>
+            </form>
+        </div>
+    </section>
+    
+</section>

@@ -6,19 +6,13 @@
 
                 <a href="" class="answer-author-info">
                     <i class="fa-solid fa-user"></i>
-                    <span class="question-user-button">Hellena A.</span>
+                    <span class="question-user-button">{{answer.author}}</span>
                 </a>
                 <div class="answer-other-info">
                     <div class="answer-date">
                         <span class="question-date question-info ">
                             <i class="fa-solid fa-calendar-days"></i>
-                            28/07/2022
-                        </span>
-                    </div>
-                    <div class="answer-time">
-                        <span class="question-time question-info hidden-xs">
-                            <i class="fa-solid fa-clock"></i>
-                            23h59
+                            {{answer.created_at}}
                         </span>
                     </div>
                 </div>
@@ -28,15 +22,15 @@
             <div class="answer-body">
                 <div class="answer-text">
                     <p class="answer-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, excepturi aliquid! Labore officia atque at a! Molestiae minima, eveniet facilis magnam, officia consequatur ipsum, quisquam debitis sunt assumenda tenetur veniam.
-
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque praesentium unde fugiat modi omnis quia dolor. Odit deserunt quia ad earum cumque, distinctio, non esse ducimus quod repellendus magnam.
+                        {{answer.answer_text}}
                     </p>
 
                 </div>
-                <div class="answer-img">
-                    <img class="answer-img" src="https://via.placeholder.com/600x400.png" alt="">
-                </div>
+                {% if answer.answer_photo %}
+                    <div class="answer-img">
+                        <img class="answer-img" src="https://via.placeholder.com/600x400.png" alt="">
+                    </div>
+                {%endif%}
             </div>
             <div class="like-button-container">
                 <button class="like-button">
@@ -44,8 +38,6 @@
                     <p class="like-button-total-clicks">12</p>
                 </button>
             </div>
-            
-
         </div>
 
     </div>
