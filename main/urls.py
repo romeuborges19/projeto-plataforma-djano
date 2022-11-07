@@ -1,10 +1,10 @@
-from django.urls import path
-
 import authors
-from authors.views import question_page 
+from django.urls import path
+from authors import views
 from . import views
+
+app_name = 'main'
 
 urlpatterns = [
     path('question/<int:id>/', views.question, name="question-page"),
-    path('question/ask/', authors.views.question_page, name="ask-page")
 ]
